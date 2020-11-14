@@ -25,32 +25,34 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function PaperTextAndButtons({onSubmit, onInputChange, onHistoryClick}) {
+export default function PaperTextAndButtons({onSubmit, onInputChange, onHistoryClick, data}) {
   const classes = useStyles();
 
   return (
     <Paper component="form" className={classes.root} elevation={0} onSubmit={onSubmit}>
       <InputBase
         className={classes.input}
-        placeholder="Caminho do Arquivo CSV"
-        inputProps={{ 'aria-label': 'caminho do arquivo csv' }}
+        placeholder="CSV File Path"
+        inputProps={{ 'aria-label': 'csv file path' }}
         name="url"
         onChange={onInputChange}
+        value={data}
       />
-      <IconButton type="submit" className={classes.iconButton} aria-label="upload" title="Enviar">
+      <IconButton type="submit" className={classes.iconButton} aria-label="send" title="Send">
         <CloudUpload />
       </IconButton>
       <Divider className={classes.divider} orientation="vertical" />
-      <IconButton className={classes.iconButton} aria-label="history" title="Ver histórico" onClick={onHistoryClick}>
+      <IconButton className={classes.iconButton} aria-label="show history" title="Show History" onClick={onHistoryClick}>
         <History />
       </IconButton>
     </Paper>
   );
 }
 
-const { func } = PropTypes
+const { func, string } = PropTypes
 PaperTextAndButtons.propTypes = {
   onSubmit: func.isRequired,
   onInputChange: func.isRequired,
-  onHistoryClick: func.isRequired
+  onHistoryClick: func.isRequired,
+  data: string
 }

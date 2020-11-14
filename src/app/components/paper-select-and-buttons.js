@@ -32,7 +32,7 @@ export default function PaperSelectAndButtons({onSelect, onCloseClick, closeButt
         onChange={onSelect}
         defaultValue="none"
       >
-        <MenuItem value="none" disabled >Histórico de Arquivos</MenuItem>
+        <MenuItem value="none" disabled >File History</MenuItem>
         { 
           data ? data.map((file) => 
             <MenuItem value={file} key={file.id}>{file.filename}</MenuItem>
