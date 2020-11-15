@@ -21,6 +21,9 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
+/**
+ * Formulary with a selectable list and a close button.
+ */
 export default function PaperSelectAndButtons({onSelect, onCloseClick, closeButton, data}) {
   const classes = useStyles();
 
@@ -53,8 +56,20 @@ export default function PaperSelectAndButtons({onSelect, onCloseClick, closeButt
 
 const { string, func, array } = PropTypes
 PaperSelectAndButtons.propTypes = {
+  /**
+   * Function to handle item selection event.
+   */
   onSelect: func.isRequired,
+  /**
+   * Function to handle close button click event.
+   */
   onCloseClick: func.isRequired,
+  /**
+   * Close button title.
+   */
   closeButton: string,
+  /**
+   * Data to show in the list. The objects must have "id" and "filename" atributes.
+   */
   data: array
 }

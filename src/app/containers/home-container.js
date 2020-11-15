@@ -3,7 +3,9 @@ import Header from '../components/header'
 import Map from '../components/map'
 import { DataContext } from './data-context'
 
-
+/**
+ * Application container
+ */
 class Home extends Component {
 
   constructor() {
@@ -20,7 +22,7 @@ class Home extends Component {
           />
           <Map
             container='map'
-            style='mapbox://styles/mapbox/outdoors-v11'
+            mapStyle='mapbox://styles/mapbox/outdoors-v11'
             zoom={4}
             classNameStyle='mapContainer'
             accessToken='pk.eyJ1IjoicmhhY2FyeXMiLCJhIjoiY2toZXRtYnVrMGJrYzMwcGZjc253bm9nNCJ9.KVVmCmK7jRebcW5TTBZIyg'

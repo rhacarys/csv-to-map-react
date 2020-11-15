@@ -4,6 +4,9 @@ import mapboxgl from 'mapbox-gl'
 import { DataContext } from '../containers/data-context'
 import './map.css'
 
+/**
+ * Component to render a simple map using mapbox-gl library.
+ */
 class Map extends React.Component {
   constructor(props){
     super(props)
@@ -14,16 +17,16 @@ class Map extends React.Component {
   }
   
   componentDidMount(){
-    const { container, style, zoom, accessToken } = this.props
+    const { container, mapStyle, zoom, accessToken } = this.props
     const { center } = this.state
-    this.handleMap(container, style, center, zoom, accessToken)
+    this.handleMap(container, mapStyle, center, zoom, accessToken)
   }
 
-  handleMap(container, style, center, zoom, accessToken){
+  handleMap(container, mapStyle, center, zoom, accessToken){
     mapboxgl.accessToken = accessToken
     const map = new mapboxgl.Map({
       container: container,
-      style: style,
+      style: mapStyle,
       center: center,
       zoom: zoom
     })
@@ -45,10 +48,30 @@ Map.contextType = DataContext
 
 const { string, number } = PropTypes
 Map.propTypes = {
+  /**
+   * The map container id.
+   */
   container: string.isRequired,
-  style: string.isRequired,
+  /**
+   * The style of the mapbox-gl map.
+   * 
+   * @see {@link https://docs.mapbox.com/help/glossary/style/}
+   */
+  mapStyle: string.isRequired,
+  /**
+   * The map container css class.
+   */
   classNameStyle: string.isRequired,
+  /**
+   * The map initial zoom level
+   */
   zoom: number.isRequired,
+  /**
+   * The mapbox-gl access token, required to render the map.
+   * 
+   * @see {@link https://docs.mapbox.com/help/glossary/access-token/}
+   */
   accessToken: string.isRequired
 }
+
 export default Map

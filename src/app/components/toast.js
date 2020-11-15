@@ -20,6 +20,10 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+
+/**
+ * Component to show alert messages on screen and auto hide after a while.
+ */
 export default function Toast(props) {
   const classes = useStyles();
   const [open, setOpen] = React.useState(true);
@@ -37,9 +41,22 @@ export default function Toast(props) {
   );
 }
 
-const { string, func } = PropTypes
+const { string, number, func, oneOf } = PropTypes
 Toast.propTypes = {
-    message: string.isRequired,
-    severity: string.isRequired,
-    closeHandle: func.isRequired
+  /**
+   * Message to show.
+   */
+  message: string.isRequired,
+  /**
+   * Severity of the alert popup to define his color and icon.
+   */
+  severity: oneOf(['success', 'info', 'warning', 'error' ]),
+  /**
+   * Function to handle close toast event on toast timeout.
+   */
+  closeHandle: func.isRequired,
+  /**
+   * Toast timeout, in miliseconds. The default value is 6000.
+   */
+  timeout: number
 }

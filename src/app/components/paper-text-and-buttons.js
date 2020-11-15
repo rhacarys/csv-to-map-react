@@ -25,6 +25,9 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+/**
+ * Formulary with a text field, a submit button and a hystory button.
+ */
 export default function PaperTextAndButtons({onSubmit, onInputChange, onHistoryClick, data}) {
   const classes = useStyles();
 
@@ -51,8 +54,20 @@ export default function PaperTextAndButtons({onSubmit, onInputChange, onHistoryC
 
 const { func, string } = PropTypes
 PaperTextAndButtons.propTypes = {
+  /**
+   * Function to handle form submit event.
+   */
   onSubmit: func.isRequired,
+  /**
+   * Function to handle textfield change event.
+   */
   onInputChange: func.isRequired,
+  /**
+   * Function to handle history button click event.
+   */
   onHistoryClick: func.isRequired,
+  /**
+   * Initial value of the textfield.
+   */
   data: string
 }

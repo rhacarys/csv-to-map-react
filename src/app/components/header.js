@@ -10,6 +10,9 @@ const useStyles = makeStyles(() => ({
   }
 }));
 
+/**
+ * The app header, with the title and a formulary
+ */
 const Header = ({title}) => {
   const classes = useStyles();
 
@@ -28,6 +31,9 @@ const Header = ({title}) => {
 
 const { string } = PropTypes
 Header.propTypes = {
+  /**
+   * App title, to show in the header.
+   */
   title: string.isRequired
 }
 
