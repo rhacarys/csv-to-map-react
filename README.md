@@ -3,6 +3,8 @@
 This is a simple React App used to upload files from an AWS Bucket to the [CSV to Map API](https://github.com/rhacarys/csv-to-map-api).
 The project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+### The app is running on [`https://csv-to-map.netlify.app/`](https://csv-to-map.netlify.app/)
+
 ## Uploading a file
 
 Once this app is running an open in a browser, you can insert a file url in the textfield located in the site header. Then, you can click in the Send button do send the file for upload.
