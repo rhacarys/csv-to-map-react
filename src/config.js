@@ -1,6 +1,6 @@
 const BASE_URL =
   process.env.NODE_ENV === "production"
-    ? "https://csv-to-map-api.herokuapp.com/"
+    ? "https://csv-to-map-api.herokuapp.com"
     : "http://localhost:8000";
 
 const config = {
