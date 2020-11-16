@@ -1,40 +1,38 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { AppBar, Toolbar, Typography } from '@material-ui/core'
-import { makeStyles } from '@material-ui/core/styles'
-import Form from './form'
+import React from "react";
+import PropTypes from "prop-types";
+import { AppBar, Toolbar, Typography } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core/styles";
+import Form from "./form";
 
 const useStyles = makeStyles(() => ({
   grow: {
     flexGrow: 1,
-  }
+  },
 }));
 
 /**
  * The app header, with the title and a formulary
  */
-const Header = ({title}) => {
+const Header = ({ title }) => {
   const classes = useStyles();
 
-  return(
+  return (
     <AppBar>
       <Toolbar>
-        <Typography variant="h6">
-          {title}
-        </Typography>
+        <Typography variant="h6">{title}</Typography>
         <div className={classes.grow} />
         <Form />
       </Toolbar>
     </AppBar>
-  )
-}
+  );
+};
 
-const { string } = PropTypes
+const { string } = PropTypes;
 Header.propTypes = {
   /**
    * App title, to show in the header.
    */
-  title: string.isRequired
-}
+  title: string.isRequired,
+};
 
-export default Header
+export default Header;

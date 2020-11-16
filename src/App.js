@@ -1,7 +1,7 @@
-import React from 'react'
-import ThemeProvider from '@material-ui/styles/ThemeProvider'
-import theme from './app/themes'
-import Home from './app/containers/home-container'
+import React from "react";
+import ThemeProvider from "@material-ui/styles/ThemeProvider";
+import theme from "./app/themes";
+import Home from "./app/containers/home-container";
 
 /**
  * Root component of the App
@@ -12,6 +12,6 @@ export default class App extends React.Component {
       <ThemeProvider theme={theme}>
         <Home />
       </ThemeProvider>
-    )
+    );
   }
 }

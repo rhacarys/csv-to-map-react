@@ -1,14 +1,14 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { makeStyles } from '@material-ui/core/styles'
-import { Paper, Select, MenuItem, IconButton } from '@material-ui/core'
-import { Close } from '@material-ui/icons'
+import React from "react";
+import PropTypes from "prop-types";
+import { makeStyles } from "@material-ui/core/styles";
+import { Paper, Select, MenuItem, IconButton } from "@material-ui/core";
+import { Close } from "@material-ui/icons";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    padding: '2px 4px',
-    display: 'flex',
-    alignItems: 'center',
+    padding: "2px 4px",
+    display: "flex",
+    alignItems: "center",
     width: 400,
     backgroundColor: theme.palette.background.default,
   },
@@ -18,34 +18,43 @@ const useStyles = makeStyles((theme) => ({
   },
   iconButton: {
     padding: 10,
-  }
+  },
 }));
 
 /**
  * Formulary with a selectable list and a close button.
  */
-export default function PaperSelectAndButtons({onSelect, onCloseClick, closeButton, data}) {
+export default function PaperSelectAndButtons({
+  onSelect,
+  onCloseClick,
+  closeButton,
+  data,
+}) {
   const classes = useStyles();
 
   return (
     <Paper component="form" className={classes.root} elevation={0}>
-      <Select 
-        name="selected" 
-        className={classes.input} 
+      <Select
+        name="selected"
+        className={classes.input}
         onChange={onSelect}
         defaultValue="none"
       >
-        <MenuItem value="none" disabled >File History</MenuItem>
-        { 
-          data ? data.map((file) => 
-            <MenuItem value={file} key={file.id}>{file.filename}</MenuItem>
-          ) : ""
-        }
+        <MenuItem value="none" disabled>
+          File History
+        </MenuItem>
+        {data
+          ? data.map((file) => (
+              <MenuItem value={file} key={file.id}>
+                {file.filename}
+              </MenuItem>
+            ))
+          : ""}
       </Select>
-      <IconButton 
-        className={classes.iconButton} 
-        aria-label="close" 
-        title={closeButton} 
+      <IconButton
+        className={classes.iconButton}
+        aria-label="close"
+        title={closeButton}
         onClick={onCloseClick}
       >
         <Close />
@@ -54,7 +63,7 @@ export default function PaperSelectAndButtons({onSelect, onCloseClick, closeButt
   );
 }
 
-const { string, func, array } = PropTypes
+const { string, func, array } = PropTypes;
 PaperSelectAndButtons.propTypes = {
   /**
    * Function to handle item selection event.
@@ -71,5 +80,5 @@ PaperSelectAndButtons.propTypes = {
   /**
    * Data to show in the list. The objects must have "id" and "filename" atributes.
    */
-  data: array
-}
+  data: array,
+};

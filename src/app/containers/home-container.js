@@ -1,36 +1,33 @@
-import React, { Component } from 'react'
-import Header from '../components/header'
-import Map from '../components/map'
-import { DataContext } from './data-context'
+import React, { Component } from "react";
+import Header from "../components/header";
+import Map from "../components/map";
+import { DataContext } from "./data-context";
 
 /**
  * Application container
  */
 class Home extends Component {
-
   constructor() {
     super();
     this.state = {};
   }
 
-  render(){
-    return(
-      <DataContext.Provider value={{map: undefined}}>
+  render() {
+    return (
+      <DataContext.Provider value={{ map: undefined }}>
         <div>
-          <Header
-            title='Cyan Challenge'
-          />
+          <Header title="Cyan Challenge" />
           <Map
-            container='map'
-            mapStyle='mapbox://styles/mapbox/outdoors-v11'
+            container="map"
+            mapStyle="mapbox://styles/mapbox/outdoors-v11"
             zoom={4}
-            classNameStyle='mapContainer'
-            accessToken='pk.eyJ1IjoicmhhY2FyeXMiLCJhIjoiY2toZXRtYnVrMGJrYzMwcGZjc253bm9nNCJ9.KVVmCmK7jRebcW5TTBZIyg'
+            classNameStyle="mapContainer"
+            accessToken="pk.eyJ1IjoicmhhY2FyeXMiLCJhIjoiY2toZXRtYnVrMGJrYzMwcGZjc253bm9nNCJ9.KVVmCmK7jRebcW5TTBZIyg"
           />
         </div>
       </DataContext.Provider>
-    )
+    );
   }
 }
 
-export default Home
+export default Home;

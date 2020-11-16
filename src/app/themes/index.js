@@ -1,10 +1,10 @@
-import { createMuiTheme  } from '@material-ui/core/styles'
-import { cyan } from '@material-ui/core/colors'
+import { createMuiTheme } from "@material-ui/core/styles";
+import { cyan } from "@material-ui/core/colors";
 
 export default createMuiTheme({
   palette: {
     background: {
-      default: cyan[500]
+      default: cyan[500],
     },
     primary: {
       main: cyan[300],
@@ -15,9 +15,9 @@ export default createMuiTheme({
   },
   overrides: {
     MuiMenu: {
-        list: {
-            backgroundColor: cyan[500],
-        },
+      list: {
+        backgroundColor: cyan[500],
+      },
     },
   },
-})
+});
