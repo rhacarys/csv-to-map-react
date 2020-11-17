@@ -1,21 +1,23 @@
 # Cyan Challenge - CSV to Map React App
 
-This is a simple React App used to upload files from an AWS Bucket to the [CSV to Map API](https://github.com/rhacarys/csv-to-map-api).
+This is a simple React App used to upload files from an AWS Bucket to the [CSV to Map API](https://github.com/rhacarys/csv-to-map-api).\
 The project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ### The app is running on [`https://csv-to-map.netlify.app/`](https://csv-to-map.netlify.app/)
 
 ## Uploading a file
 
-Once this app is running an open in a browser, you can insert a file url in the textfield located in the site header. Then, you can click in the Send button do send the file for upload.
+Once this app is running an open in a browser, you can insert a file url in the textfield located in the site header.\
+Then, you can click in the Send button do send the file for upload.
 
-The file provided must be in CSV format, with two columns (latitude and longitude) separated by coma.
-Each line of the file must represent a single bidimensional Cartesian point.
+The file provided must be in CSV format, with two columns (latitude and longitude) separated by coma.\
+Each line of the file must represent a single bidimensional Cartesian point.\
 These points will be parsed into a database and drawn as Markers on a big Mapbox Map.
 
 ## History
 
-Click in the history button to access uploads history. If you select a file in the list, the current Markers of the map will be removed and the points previous parsed from this file will retake their places on the map.
+Click in the history button to access uploads history.\
+If you select a file in the list, the current Markers of the map will be removed and the points previous parsed from this file will retake their places on the map.
 
 Click in the Close button to hide the history panel and show back the url upload form.
 
